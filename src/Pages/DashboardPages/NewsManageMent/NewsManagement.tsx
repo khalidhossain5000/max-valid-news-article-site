@@ -1,6 +1,7 @@
 import React from "react";
 import { IoChevronForward } from "react-icons/io5";
 import PrimaryBtn from "../../../Components/Shared/Button/PrimaryBtn";
+import { Link } from "react-router";
 
 const NewsManagement = () => {
   return (
@@ -33,10 +34,11 @@ const NewsManagement = () => {
             Blog & News Management
           </h1>
         </div>
-
-        <PrimaryBtn className="rounded-xl font-semibold text-white transition-transform  hover:-translate-y-0.5 duration-500 hover:bg-sky-600 cursor-pointer px-4 py-2">
-          Create New Content
-        </PrimaryBtn>
+        <Link to="/dashboard/create-content">
+          <PrimaryBtn className="rounded-xl font-semibold text-white transition-transform  hover:-translate-y-0.5 duration-500 hover:bg-sky-600 cursor-pointer px-4 py-2">
+            Create New Content
+          </PrimaryBtn>
+        </Link>
       </div>
 
       {/* content goes here */}

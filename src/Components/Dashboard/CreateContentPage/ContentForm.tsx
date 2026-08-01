@@ -13,7 +13,6 @@ import ImageUploadModal from "./ImageUploadModal";
 import CategorySelect from "./CategorySelect";
 import { createNewsArticle } from "../../../service/newsHandler";
 
-
 const MAX_TITLE_LENGTH = 64;
 const MAX_TAGS = 3;
 
@@ -88,12 +87,13 @@ const ContentForm = () => {
     try {
       setIsSubmitting(true);
       //api post call
-      console.log("Submitting:", payload);
 
-      const result=await createNewsArticle(payload)
+      const result = await createNewsArticle(payload);
 
-      console.log(result,'result from fornt end after submit')
-      toast.success("Content created");
+      if (result.success) {
+        toast.success("Content created");
+      }
+
       resetForm();
     } catch (err) {
       toast.error("Something went wrong");
@@ -171,7 +171,9 @@ const ContentForm = () => {
               type="text"
               value={tagInput}
               onChange={(e) => handleTagInputChange(e.target.value)}
-              placeholder={tags.length === 0 ? "Plan name Separate by Comma (,)" : ""}
+              placeholder={
+                tags.length === 0 ? "Plan name Separate by Comma (,)" : ""
+              }
               className="min-w-[100px] flex-1 bg-transparent text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none"
             />
           )}
