@@ -7,17 +7,20 @@ import PrimaryBtn from "../Button/PrimaryBtn";
 
 const NavBar = () => {
   return (
-    <section>
+    <section className="max-w-[1600px] mx-auto flex items-center justify-between bg-transparent rounded-full border border-white shaodw-sm">
       {/* logo */}
       <div>
-        <img src="/assets/logo.png" alt="Logo" />
+        <img src="/assets/logo.png" alt="Logo" className="w-16 h-16" />
       </div>
 
       {/* navitems */}
       <nav>
-        <ul>
+        <ul className="flex items-center gap-4 ">
           {navLinks.map((link, i) => (
-            <li key={i} className="inter text-muted text-sm lg:text-xl font-medium">
+            <li
+              key={i}
+              className="inter text-muted text-sm lg:text-xl font-medium flex items-center gap-1"
+            >
               <Link to={link.href}>{link.label}</Link>
               {link.isDropdown && <IoChevronDownSharp />}
             </li>

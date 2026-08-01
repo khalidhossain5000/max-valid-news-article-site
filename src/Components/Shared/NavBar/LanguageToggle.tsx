@@ -28,7 +28,7 @@ export default function LanguageToggle({
           type="button"
           onClick={() => handleSelect(value)}
           aria-pressed={lang === value}
-          className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors duration-200 ${
+          className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors duration-200 cursor-pointer ${
             lang === value
               ? "bg-primary text-white"
               : "text-text-primary hover:bg-gray-50"
