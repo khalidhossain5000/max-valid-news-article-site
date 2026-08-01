@@ -52,3 +52,12 @@
   --warning: #f9a300;
   --error: #dc2626;
 }
+
+
+
+/* navbar active route indicator */
+
+a.active{
+    border-bottom: 2px solid blue;
+    padding-bottom: 5px;
+}

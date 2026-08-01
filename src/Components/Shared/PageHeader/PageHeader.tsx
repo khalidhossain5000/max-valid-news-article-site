@@ -9,12 +9,12 @@ const PageHeader = ({
 }: PageHeaderProps) => {
   return (
     <div
-      className="relative flex h-40 sm:h-44 md:h-56 xl:h-68 items-center justify-center bg-cover bg-center "
+      className="relative flex h-40 sm:h-44 md:h-56 xl:h-95 items-center justify-center bg-cover bg-center xl:pt-24"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-[#264658]/60 " />
 
-      <h1 className="relative z-10 text-3xl font-normal text-text-muted inter md:text-5xl text-center">
+      <h1 className="relative z-10 text-3xl font-normal text-text-muted inter md:text-5xl xl:text-6xl 2xl:text-7xl text-center xl:font-medium">
         {title}
       </h1>
     </div>

@@ -19,7 +19,7 @@ const MobileNav = () => {
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label="Open menu"
-        className="text-2xl text-[#2494cc]"
+        className="text-2xl text-[#2494cc] lg:text-black"
       >
         <FaList />
       </button>
