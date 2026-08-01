@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import { IoMenu } from "react-icons/io5";
 import { sidebarLinks } from "./SIdebarLinks";
+import { FaUser } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -9,11 +10,11 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`hidden h-screen shrink-0 border-r border-gray-100 bg-white transition-all duration-300 lg:block ${
+      className={`hidden h-screen shrink-0 border-r border-gray-100 bg-background transition-all duration-300 lg:block ${
         isCollapsed ? "w-20" : "w-64"
       }`}
     >
-      {/* header: logo + collapse toggle */}
+      {/* header logo + collapse toggle */}
       <div className="flex items-center justify-between border-b border-gray-100 px-4 py-4">
         {!isCollapsed && (
           <img src="/assets/logo.png" alt="Logo" className="h-9 w-9" />
@@ -56,6 +57,31 @@ const Sidebar = () => {
           })}
         </ul>
       </nav>
+
+      {/* user mock info */}
+
+      <div
+        className={`absolute bottom-0 left-0 right-0 flex items-center gap-3 border border-gray-200 px-4 py-4 transition-all duration-300 shadow-sm rounded-lg ${
+          isCollapsed ? "justify-center w-20" : "w-64"
+        }`}
+      >
+        {/* avatar */}
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-300">
+          <FaUser className="text-black" />
+        </div>
+
+        {/* info*/}
+        {!isCollapsed && (
+          <div className="min-w-0">
+            <p className="truncate text-sm font-medium text-gray-900">
+              Super Admin
+            </p>
+            <p className="truncate text-xs text-gray-500">
+              super.admin@example.com
+            </p>
+          </div>
+        )}
+      </div>
     </aside>
   );
 };

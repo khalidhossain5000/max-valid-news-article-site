@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import RootLayout from "../Layouts/RootLayout";
 import NewsArticlePage from "../Components/NewsArticlePage/NewsArticlePage";
 import DashboardLayout from "../Layouts/DashboardLayout";
+import DashboardHome from "../Pages/DashboardPages/DashboardHome/DashboardHome";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     Component: DashboardLayout,
-    children: [],
+    children: [
+        {
+            index: true,
+            element:<DashboardHome />
+        }
+    ],
   },
 ]);

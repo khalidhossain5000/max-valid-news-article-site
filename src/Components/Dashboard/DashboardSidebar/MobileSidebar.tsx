@@ -3,6 +3,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import { Link, useLocation } from "react-router";
 import Drawer from "../../Shared/Drawer/Drawer";
 import { sidebarLinks } from "./SIdebarLinks";
+import { FaUser } from "react-icons/fa6";
 
 const MobileSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,6 +66,26 @@ const MobileSidebar = () => {
             })}
           </ul>
         </nav>
+        {/* user info mock */}
+        <div
+          className={`absolute bottom-0 left-0 right-0 flex items-center gap-3 border border-gray-200 px-4 py-4 transition-all duration-300 shadow-sm rounded-lg`}
+        >
+          {/* avatar */}
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-300">
+            <FaUser className="text-black" />
+          </div>
+
+          {/* info*/}
+
+          <div className="min-w-0">
+            <p className="truncate text-sm font-medium text-gray-900">
+              Super Admin
+            </p>
+            <p className="truncate text-xs text-gray-500">
+              super.admin@example.com
+            </p>
+          </div>
+        </div>
       </Drawer>
     </div>
   );
