@@ -25,7 +25,7 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     label: "Blog & News Management",
-    href: "/dashboard/blog-news",
+    href: "/dashboard/content-management",
     icon: IoNewspaperOutline,
   },
   {
