@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import EditorToolbar from "./EditorToolBar";
 import ImageUploadModal from "./ImageUploadModal";
 import CategorySelect from "./CategorySelect";
+import { createNewsArticle } from "../../../service/newsHandler";
 
 
 const MAX_TITLE_LENGTH = 64;
@@ -88,6 +89,10 @@ const ContentForm = () => {
       setIsSubmitting(true);
       //api post call
       console.log("Submitting:", payload);
+
+      const result=await createNewsArticle(payload)
+
+      console.log(result,'result from fornt end after submit')
       toast.success("Content created");
       resetForm();
     } catch (err) {
@@ -166,8 +171,8 @@ const ContentForm = () => {
               type="text"
               value={tagInput}
               onChange={(e) => handleTagInputChange(e.target.value)}
-              placeholder={tags.length === 0 ? "Plan name" : ""}
-              className="min-w-[100px] flex-1 bg-transparent text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none"
+              placeholder={tags.length === 0 ? "Plan name Separate by Comma (,)" : ""}
+              className="min-w-[100px] flex-1 bg-transparent text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none"
             />
           )}
         </div>
@@ -229,7 +234,7 @@ const ContentForm = () => {
           type="button"
           disabled={isSubmitting}
           onClick={handleSubmit}
-          className="rounded-lg bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary-hover disabled:opacity-50"
+          className="rounded-lg bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary-hover disabled:opacity-50 cursor-pointer"
         >
           {isSubmitting ? "Creating..." : "Create Content"}
         </button>
