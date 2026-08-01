@@ -21,7 +21,7 @@ const NavBar = () => {
   }, []);
   return (
     <section
-      className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-full xl:border transition-colors duration-300 py-6 lg:py-12 xl:py-0 px-4 sm:px-5 md:px-6 lg:px-8 xl:px-12 2xl:px-14${
+      className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-full xl:border xl:border-slate-300 xl:backdrop-blur-sm transition-colors duration-300 py-6 lg:py-12 xl:py-5 mt-3 px-4 sm:px-5 md:px-6 lg:px-8 xl:px-12 2xl:px-14${
         isScrolled
           ? "xl:border-gray-200 bg-white/20 backdrop-blur-md shadow-sm"
           : "xl:border-white bg-transparent"
@@ -29,7 +29,7 @@ const NavBar = () => {
     >
       {/* logo */}
       <div className="hidden xl:block">
-        <img src="/assets/logo.png" alt="Logo" className="w-16 h-16" />
+        <img src="/assets/logo.png" alt="Logo" className="w-10 h-10 rounded-full" />
       </div>
 
       {/* navitems */}
@@ -49,9 +49,10 @@ const NavBar = () => {
       {/* translater and buttons */}
       <div className="hidden xl:flex items-center gap-4">
         <LanguageToggle />
-        <SecondaryBtn>Sign In </SecondaryBtn>
+        <SecondaryBtn className="rounded-[14px] lg:font-medium text-lg  px-6 py-2 hover:bg-primary hover:text-white transition-transform hover:-translate-y-0.5 hover:shadow-[0_22px_34px_-8px_rgba(0,0,0,0.5)] cursor-pointer duration-500">Sign in </SecondaryBtn>
 
-        <PrimaryBtn>Sign U</PrimaryBtn>
+        <PrimaryBtn className="rounded-xl bg-linear-to-b from-primary to-sky-600 px-8 py-3 text-base font-semibold text-white shadow-[0_18px_30px_-8px_rgba(0,0,0,0.45)] transition-transform  hover:-translate-y-0.5 hover:shadow-[0_22px_34px_-8px_rgba(0,0,0,0.5)] active:shadow-[0_10px_18px_-6px_rgba(0,0,0,0.4)]d duration-500 hover:bg-sky-600 active:translate-y-0 cursor-pointer">Donate</PrimaryBtn>
+
       </div>
       {/* hamburger menu */}
       <div className="ml-auto xl:hidden">

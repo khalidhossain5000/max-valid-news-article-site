@@ -1,4 +1,3 @@
-
 interface PageHeaderProps {
   title: string;
   bgImage?: string;
@@ -10,7 +9,7 @@ const PageHeader = ({
 }: PageHeaderProps) => {
   return (
     <div
-      className="relative flex h-40 sm:h-44 md:h-56 xl:h-68 items-center justify-center bg-cover bg-center"
+      className="relative flex h-40 sm:h-44 md:h-56 xl:h-68 items-center justify-center bg-cover bg-center "
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-[#264658]/60 " />

@@ -1,4 +1,7 @@
 import React from "react";
+
+import { twMerge } from "tailwind-merge";
+
 type PrimaryBtnProps = {
   children: React.ReactNode;
   className?: string;
@@ -6,7 +9,7 @@ type PrimaryBtnProps = {
 const SecondaryBtn = ({ children, className }: PrimaryBtnProps) => {
   return (
     <button
-      className={`bg-transparent text-white px-4 py-1 border border-white ${className}`}
+      className={twMerge("bg-transparent text-white px-4 py-1 border border-white inter", className)}
     >
       {children}
     </button>
