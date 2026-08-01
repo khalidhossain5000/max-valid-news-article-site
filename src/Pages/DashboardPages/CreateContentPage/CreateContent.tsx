@@ -1,4 +1,5 @@
 import { IoChevronForward } from "react-icons/io5";
+import ContentForm from "../../../Components/Dashboard/CreateContentPage/ContentForm";
 
 const CreateContent = () => {
   return (
@@ -30,6 +31,12 @@ const CreateContent = () => {
           Create New Blogs & Content
         </h1>
       </div>
+
+      {/* content form */}
+
+        <div className="mt-6">
+            <ContentForm/>
+        </div>
     </div>
   );
 };

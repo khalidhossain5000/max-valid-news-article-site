@@ -4,6 +4,7 @@ import NewsArticlePage from "../Components/NewsArticlePage/NewsArticlePage";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import DashboardHome from "../Pages/DashboardPages/DashboardHome/DashboardHome";
 import NewsManagement from "../Pages/DashboardPages/NewsManageMent/NewsManagement";
+import CreateContent from "../Pages/DashboardPages/CreateContentPage/CreateContent";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
         {
           path:"content-management",
           element:<NewsManagement />
+        },
+        {
+          path:"create-content",
+          element:<CreateContent />
         }
     ],
   },
