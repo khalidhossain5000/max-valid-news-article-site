@@ -21,11 +21,12 @@ const NewsArticlePage = () => {
   const featuredNews = news.find((n) => n.isFeatured === true);
   console.log(featuredNews, "this is featured news", news);
   return (
-    <section>
+    <section >
       <PageHeader title="News & Article" />
       {/* Article content will go here */}
+      <div className="max-w-[1400px] mx-auto py-6 lg:py-12 xl:py-5 mt-3 px-4 sm:px-5 md:px-6 lg:px-8 xl:px-12 2xl:px-14">
       {/* search */}
-      <div className="mb-4">
+      <div className="mb-4 lg:py-6">
         <SearchBar value={searchTerm} onSearch={setSearchTerm} />
       </div>
       {/* featured card */}
@@ -41,6 +42,8 @@ const NewsArticlePage = () => {
 
       {/* main card with filter sidebar */}
       <div></div>
+
+      </div>
     </section>
   );
 };
