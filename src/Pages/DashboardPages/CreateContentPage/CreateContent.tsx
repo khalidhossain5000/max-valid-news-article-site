@@ -3,8 +3,8 @@ import ContentForm from "../../../Components/Dashboard/CreateContentPage/Content
 
 const CreateContent = () => {
   return (
-    <div>
-      {/* breadcramb title */}
+    <div className="">
+   
       <div>
         {" "}
         {/* bread */}

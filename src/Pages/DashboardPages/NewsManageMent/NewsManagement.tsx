@@ -1,13 +1,13 @@
-import React from "react";
 import { IoChevronForward } from "react-icons/io5";
 import PrimaryBtn from "../../../Components/Shared/Button/PrimaryBtn";
 import { Link } from "react-router";
+import AllNewsTable from "../../../Components/Dashboard/NewsTable/AllNewsTable";
 
 const NewsManagement = () => {
   return (
     <section>
       {/* breadcramb and title + create btn*/}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6 p-4">
         <div>
           {" "}
           {/* bread */}
@@ -42,7 +42,9 @@ const NewsManagement = () => {
       </div>
 
       {/* content goes here */}
-      <div></div>
+      <div>
+        <AllNewsTable />
+      </div>
     </section>
   );
 };
