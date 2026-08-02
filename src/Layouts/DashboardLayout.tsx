@@ -16,7 +16,7 @@ const DashboardLayout = () => {
           <MobileSidebar />
         </div>
 
-        <main className="flex-1 overflow-x-hidden p-6">
+        <main className="flex-1 overflow-x-hidden p-2 lg:p-6">
           <Outlet />
         </main>
       </div>

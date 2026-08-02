@@ -1,4 +1,4 @@
-export interface ICreatPostPayload {
+export interface ICreatNewsPayload {
     title: string;
     category: string;
     content: string;
@@ -7,11 +7,11 @@ export interface ICreatPostPayload {
     thumbnail: string
 }
 
-// post related types
+// news related types
 
-// types/post.types.ts
 
-export interface IPostQuery {
+
+export interface INewsQuery {
   page?: number | string;
   limit?: number | string;
   searchTerm?: string;
@@ -24,7 +24,7 @@ export interface IPostQuery {
   sortOrder?: "asc" | "desc";
 }
 
-export interface IPost {
+export interface INews {
   id: string;
   title: string;
   content: string;
@@ -45,6 +45,6 @@ export interface IMeta {
 }
 
 export interface IPostsResponse {
-  data: IPost[];
+  data: INews[];
   meta: IMeta;
 }

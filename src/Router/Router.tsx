@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../Layouts/RootLayout";
-import NewsArticlePage from "../Components/NewsArticlePage/NewsArticlePage";
+import NewsArticlePage from "../Pages/NewsArticlePage/NewsArticlePage";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import DashboardHome from "../Pages/DashboardPages/DashboardHome/DashboardHome";
 import NewsManagement from "../Pages/DashboardPages/NewsManageMent/NewsManagement";
@@ -22,18 +22,18 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     Component: DashboardLayout,
     children: [
-        {
-            index: true,
-            element:<DashboardHome />
-        },
-        {
-          path:"content-management",
-          element:<NewsManagement />
-        },
-        {
-          path:"create-content",
-          element:<CreateContent />
-        }
+      {
+        index: true,
+        element: <DashboardHome />,
+      },
+      {
+        path: "content-management",
+        element: <NewsManagement />,
+      },
+      {
+        path: "create-content",
+        element: <CreateContent />,
+      },
     ],
   },
 ]);

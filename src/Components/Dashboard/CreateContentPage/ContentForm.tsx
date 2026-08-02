@@ -86,12 +86,12 @@ const ContentForm = () => {
 
     try {
       setIsSubmitting(true);
-      //api post call
+      //api news call
 
       const result = await createNewsArticle(payload);
 
       if (result.success) {
-        toast.success("Content created");
+        toast.success("News created successfully");
       }
 
       resetForm();
@@ -152,7 +152,7 @@ const ContentForm = () => {
       {/* tags */}
       <div className="mt-4">
         <label className="mb-1.5 block text-sm font-medium text-gray-700">
-          Tag (max {MAX_TAGS})
+          Tag (max {MAX_TAGS}) add comma(,) to complete the tag
         </label>
         <div className="flex flex-wrap items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
           {tags.map((tag) => (

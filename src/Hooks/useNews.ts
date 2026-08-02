@@ -1,17 +1,17 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
-import type { IMeta, IPost } from "../types/types";
+import type { IMeta, INews } from "../types/types";
 import { getAllNews } from "../service/newsHandler";
 
 
-interface UsePostsOptions {
+interface UseNewsOptions {
   defaultLimit?: number;
 }
 
-export const usePosts = ({ defaultLimit = 10 }: UsePostsOptions = {}) => {
+export const useNews = ({ defaultLimit = 10 }: UseNewsOptions = {}) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const [news, setNews] = useState<INews[]>([]);
   const [meta, setMeta] = useState<IMeta | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,7 +32,7 @@ export const usePosts = ({ defaultLimit = 10 }: UsePostsOptions = {}) => {
         });
 
         if (!ignore) {
-          setPosts(res.data.data);
+          setNews(res.data.data);
           setMeta(res.data.meta);
         }
       } catch (err) {
@@ -74,7 +74,7 @@ export const usePosts = ({ defaultLimit = 10 }: UsePostsOptions = {}) => {
   };
 
   return {
-    posts,
+    news,
     meta,
     isLoading,
     page,

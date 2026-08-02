@@ -1,8 +1,8 @@
-import type { ICreatPostPayload, IPostQuery } from "../types/types";
+import type { ICreatNewsPayload, INewsQuery } from "../types/types";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-export const createNewsArticle = async (payload: ICreatPostPayload) => {
+export const createNewsArticle = async (payload: ICreatNewsPayload) => {
   const res = await fetch(`${backendUrl}/api/news`, {
     method: "POST",
     headers: {
@@ -18,7 +18,7 @@ export const createNewsArticle = async (payload: ICreatPostPayload) => {
   return result;
 };
 //get post article with search filter
-export const getAllNews = async (query: IPostQuery) => {
+export const getAllNews = async (query: INewsQuery) => {
   const params = new URLSearchParams();
 
   Object.entries(query).forEach(([key, value]) => {
