@@ -30,6 +30,7 @@ export const useNews = ({ defaultLimit = 10 }: UseNewsOptions = {}) => {
           page,
           limit,
           searchTerm: searchTerm || undefined,
+          category: category || undefined,
         });
 
         if (!ignore) {

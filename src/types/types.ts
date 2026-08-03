@@ -22,6 +22,7 @@ export interface INewsQuery {
   status?: string;
   sortBy?: string;
   sortOrder?: "asc" | "desc";
+  category?:string
 }
 
 export interface INews {
