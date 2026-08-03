@@ -46,7 +46,7 @@ const CategoryFilter = ({
       </div>
 
    
-      <div className="hidden w-full max-w-55 rounded-xl border border-gray-100 bg-white shadow-sm lg:block">
+      <div className="hidden w-full max-w-55 rounded-xl border border-gray-100 bg-white shadow-lg lg:block">
         {allItems.map((category, i) => (
           <button
             key={`c${i}`}
@@ -54,7 +54,7 @@ const CategoryFilter = ({
             onClick={() => handleSelect(category)}
             className={twMerge(
               "block w-full border-l-4 border-transparent px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50",
-              i !== 0 && "border-t border-t-gray-100",
+              i !== 0 && "border-t border-t-gray-200 cursor-pointer",
               isActive(category) &&
                 "border-l-primary bg-primary/5 font-medium text-primary",
             )}

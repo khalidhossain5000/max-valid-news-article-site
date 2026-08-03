@@ -30,7 +30,7 @@ const NewsCard = ({
       <img
         src={news.thumbnail}
         alt={news.title}
-        className="h-44 md:h-48 w-full object-cover rounded-xl shadow-sm"
+        className="h-44 md:h-48 lg:h-56 w-full object-cover rounded-xl shadow-sm"
       />
 
       {/* content */}

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import RootLayout from "../Layouts/RootLayout";
 import NewsArticlePage from "../Pages/NewsArticlePage/NewsArticlePage";
 import DashboardLayout from "../Layouts/DashboardLayout";
@@ -10,9 +10,13 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
-    children: [
+      children: [
       {
         index: true,
+        element: <Navigate to="/news-articles" replace />,
+      },
+      {
+        path: "news-articles",
         element: <NewsArticlePage />,
       },
     ],

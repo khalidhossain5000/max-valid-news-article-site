@@ -49,7 +49,7 @@ export const useNews = ({ defaultLimit = 10 }: UseNewsOptions = {}) => {
     return () => {
       ignore = true; 
     };
-  }, [page, limit, searchTerm]);
+  }, [page, limit, searchTerm,category]);
 
   const setPage = (newPage: number) => {
     const params = new URLSearchParams(searchParams);

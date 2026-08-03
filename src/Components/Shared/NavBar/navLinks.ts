@@ -30,8 +30,8 @@ export const navLinks = [
     isDropdown: true,
   },
    {
-    label: "Partnership",
-    href: "/partnership",
+    label: "Dashboard",
+    href: "/dashboard",
     isDropdown: false,
   },
 ];

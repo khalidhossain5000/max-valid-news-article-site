@@ -39,11 +39,9 @@ const NewsArticlePage = () => {
         {/* featured card */}
         <div>
           {/* featured title */}
-            <div className="py-6 ">
-          <Title className="">
-            Featured News & Article
-          </Title>
-        </div>
+          <div className="py-6 ">
+            <Title className="">Featured News & Article</Title>
+          </div>
 
           {isLoading ? (
             <FeaturedSkeleton />
@@ -75,6 +73,10 @@ const NewsArticlePage = () => {
             <div className="">
               {isLoading ? (
                 <NewsCardSkeleton />
+              ) : news.length === 0 ? (
+                <p className="text-sm text-rose-600 text-center py-6">
+                  No news found
+                </p>
               ) : (
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {news.map((n) => (
