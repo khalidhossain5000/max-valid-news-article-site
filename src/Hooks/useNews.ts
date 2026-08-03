@@ -18,6 +18,7 @@ export const useNews = ({ defaultLimit = 10 }: UseNewsOptions = {}) => {
   const page = Number(searchParams.get("page")) || 1;
   const limit = Number(searchParams.get("limit")) || defaultLimit;
   const searchTerm = searchParams.get("searchTerm") || "";
+  const category = searchParams.get("category") || "";
 
   useEffect(() => {
     let ignore = false;
@@ -65,6 +66,25 @@ export const useNews = ({ defaultLimit = 10 }: UseNewsOptions = {}) => {
     params.set("page", "1"); 
     setSearchParams(params);
   };
+//category filter
+
+const setCategory = (value: string) => {
+    const params = new URLSearchParams(searchParams);
+
+
+    if (value) {
+      params.set("category", value);
+    } else {
+      params.delete("category");
+    }
+
+
+    params.set("page", "1");
+
+    setSearchParams(params);
+  };
+
+
 
   const setLimit = (newLimit: number) => {
     const params = new URLSearchParams(searchParams);
@@ -83,5 +103,7 @@ export const useNews = ({ defaultLimit = 10 }: UseNewsOptions = {}) => {
     setPage,
     setSearchTerm,
     setLimit,
+    category,
+    setCategory
   };
 };

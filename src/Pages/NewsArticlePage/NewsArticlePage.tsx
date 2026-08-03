@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from "react";
 import FeaturedCard from "../../Components/NewsArticlePage/FeaturedNews/FeaturedCard";
 import FeaturedSkeleton from "../../Components/NewsArticlePage/FeaturedNews/FeaturedSkeleton";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
 import SearchBar from "../../Components/Shared/SearchBar/SearchBar";
 import { useNews } from "../../Hooks/useNews";
+import CategoryFilter from "../../Components/NewsArticlePage/CategoryFilter/CategoryFilter";
 
 const NewsArticlePage = () => {
+    const [category, setCategory] = useState("");
   const {
     news,
     meta,
@@ -41,7 +44,11 @@ const NewsArticlePage = () => {
       </div>
 
       {/* main card with filter sidebar */}
-      <div></div>
+ <div className="flex flex-col gap-6 lg:flex-row">
+      <CategoryFilter activeCategory={category} onSelect={setCategory} />
+
+      
+    </div>
 
       </div>
     </section>

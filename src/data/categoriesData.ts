@@ -1,5 +1,4 @@
 export const categories: string[] = [
-  "All Gallery & Media",
   "Blood Donation",
   "Tree Plantation",
   "Education & Student Support",
