@@ -37,7 +37,7 @@ const CategoryFilter = ({
             onClick={() => handleSelect(category)}
             className={twMerge(
               "shrink-0 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm whitespace-nowrap text-gray-700",
-              isActive(category) && "border-primary bg-primary text-white",
+              isActive(category) && "border-primary bg-primary text-white cursor-pointer",
             )}
           >
             {category}
