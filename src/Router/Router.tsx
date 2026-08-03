@@ -5,6 +5,7 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import DashboardHome from "../Pages/DashboardPages/DashboardHome/DashboardHome";
 import NewsManagement from "../Pages/DashboardPages/NewsManageMent/NewsManagement";
 import CreateContent from "../Pages/DashboardPages/CreateContentPage/CreateContent";
+import NotFound from "../Pages/NotFoundPage/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
   },
   //DASHBOARD LAYOUT
   {
-    path: "/dashboard",
+    path: "dashboard",
     Component: DashboardLayout,
     children: [
       {
@@ -40,4 +41,8 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+  path: "*",
+  element: <NotFound />,
+}
 ]);
