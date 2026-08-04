@@ -1,3 +1,4 @@
+import DashboardNoticeModal from "../Components/Shared/DashboardNoticeModal/DashboardNoticeModal";
 import Footer from "../Components/Shared/Footer/Footer";
 import GlobalLoader from "../Components/Shared/Loading/GlobalLoader";
 import NavBar from "../Components/Shared/NavBar/NavBar";
@@ -11,7 +12,9 @@ const RootLayout = () => {
       <header className="fixed top-0 left-0 z-50 w-full ">
         <NavBar></NavBar>
       </header>
-      <main>{state === "loading" ? <GlobalLoader /> : <Outlet />}</main>
+      <main>{state === "loading" ? <GlobalLoader /> : <Outlet />}
+      <DashboardNoticeModal/>
+      </main>
       <footer>
         <Footer />
       </footer>
