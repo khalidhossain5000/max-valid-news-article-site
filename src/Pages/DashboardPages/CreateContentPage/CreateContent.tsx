@@ -4,7 +4,6 @@ import ContentForm from "../../../Components/Dashboard/CreateContentPage/Content
 const CreateContent = () => {
   return (
     <div className="">
-   
       <div>
         {" "}
         {/* bread */}
@@ -34,9 +33,9 @@ const CreateContent = () => {
 
       {/* content form */}
 
-        <div className="mt-6">
-            <ContentForm/>
-        </div>
+      <div className="mt-6">
+        <ContentForm />
+      </div>
     </div>
   );
 };
