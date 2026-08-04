@@ -15,8 +15,8 @@ This project is a full-featured news article web app where users can browse publ
 ### 1. Clone the repository
 
 ```bash
-git clone <https://github.com/khalidhossain5000/max-valid-news-article-site.git>
-cd <max-valid-news-article-site>
+git clone https://github.com/khalidhossain5000/max-valid-news-article-site.git
+cd max-valid-news-article-site
 ```
 
 ### 2. Install dependencies
