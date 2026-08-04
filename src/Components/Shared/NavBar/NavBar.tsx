@@ -21,7 +21,7 @@ const NavBar = () => {
   }, []);
   return (
     <section
-      className={`mx-auto flex max-w-7xl items-center justify-between rounded-full xl:border xl:border-slate-300 xl:backdrop-blur-sm transition-colors duration-300 py-6 lg:py-12 xl:py-5 mt-3 px-4 sm:px-5 md:px-6 lg:px-8 xl:px-12 2xl:px-14${
+      className={`mx-auto flex max-w-7xl items-center justify-between rounded-full xl:border xl:border-slate-300 xl:backdrop-blur-sm transition-colors duration-300 py-6 lg:py-12 xl:py-5 mt-3 px-4 sm:px-5 md:px-6 lg:px-8 xl:px-12 2xl:px-14 ${
         isScrolled
           ? "xl:border-gray-200 bg-black/40 backdrop-blur-md shadow-sm "
           : "xl:border-white bg-transparent"

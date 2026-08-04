@@ -12,9 +12,9 @@ const DashboardLayout = () => {
       {/* right side*/}
       <div className="flex flex-1 flex-col overflow-y-auto">
         {/* mobile-only topbar */}
-        <div className="flex items-center border-b border-gray-100 bg-white px-4 py-3 lg:hidden">
+        <header className="flex items-center border-b border-gray-100 bg-white px-4 py-3 lg:hidden">
           <MobileSidebar />
-        </div>
+        </header>
 
         <main className="flex-1 overflow-x-hidden p-2 lg:p-6">
           <Outlet />
