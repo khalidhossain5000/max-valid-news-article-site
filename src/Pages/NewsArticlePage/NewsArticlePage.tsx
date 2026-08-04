@@ -92,6 +92,7 @@ const NewsArticlePage = () => {
               </p>
               <div className="flex items-center gap-4">
                 <Pagination
+                className="cursor-pointer"
                   page={page}
                   totalPages={meta?.totalPages || 1}
                   onPageChange={setPage}

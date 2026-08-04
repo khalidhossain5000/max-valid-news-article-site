@@ -27,7 +27,7 @@ const Pagination = ({
         type="button"
         onClick={() => onPageChange(page - 1)}
         disabled={page === 1}
-        className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-200 text-gray-400 disabled:opacity-40"
+        className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-200 text-gray-400 disabled:opacity-40 cursor-pointer"
       >
         <IoChevronBack size={16} />
       </button>
@@ -38,7 +38,7 @@ const Pagination = ({
           type="button"
           onClick={() => onPageChange(p)}
           className={twMerge(
-            "flex h-8 w-8 items-center justify-center rounded-md border text-sm font-medium",
+            "flex h-8 w-8 items-center justify-center  cursor-pointer rounded-md border text-sm font-medium",
             p === page
               ? "border-primary bg-primary text-white"
               : "border-primary text-primary",
@@ -52,7 +52,7 @@ const Pagination = ({
         type="button"
         onClick={() => onPageChange(page + 1)}
         disabled={page === totalPages}
-        className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-200 text-gray-400 disabled:opacity-40"
+        className="flex h-8 w-8 items-center justify-center cursor-pointer rounded-md border border-gray-200 text-gray-400 disabled:opacity-40"
       >
         <IoChevronForward size={16} />
       </button>
