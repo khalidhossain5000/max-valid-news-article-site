@@ -53,7 +53,7 @@ const CategoryFilter = ({
             type="button"
             onClick={() => handleSelect(category)}
             className={twMerge(
-              "block w-full border-l-4 border-transparent px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50",
+              "block w-full border-l-4 border-transparent px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-50 cursor-pointer",
               i !== 0 && "border-t border-t-gray-200 cursor-pointer",
               isActive(category) &&
                 "border-l-primary bg-primary/5 font-medium text-primary",
