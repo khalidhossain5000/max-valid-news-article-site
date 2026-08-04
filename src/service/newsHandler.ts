@@ -13,7 +13,6 @@ export const createNewsArticle = async (payload: ICreatNewsPayload) => {
 
   const result = await res.json();
 
-
   return result;
 };
 //get post article with search filter
@@ -35,15 +34,12 @@ export const getAllNews = async (query: INewsQuery) => {
   return res.json();
 };
 
-
 //get artilce details
 
-export const getNewsDetails=async(id:string)=>{
-    const res = await fetch(`${backendUrl}/api/news/${id}`);
+export const getNewsDetails = async (id: string) => {
+  const res = await fetch(`${backendUrl}/api/news/${id}`);
 
+  const result = res.json();
 
-   const result=res.json()
-
-
-   return result
-}
+  return result;
+};
