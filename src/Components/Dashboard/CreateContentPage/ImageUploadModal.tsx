@@ -3,6 +3,7 @@ import { FiLoader } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { imageUpload } from "../../../service/uploadImage";
 import { IoCloudUpload } from "react-icons/io5";
+import Swal from "sweetalert2";
 
 interface ImageUploadModalProps {
   isOpen: boolean;
@@ -25,7 +26,11 @@ const ImageUploadModal: React.FC<ImageUploadModalProps> = ({
     if (!file) return;
 
     if (file.size > 2 * 1024 * 1024) {
-      alert("File size is too big! Please select an image smaller than 2MB.");
+      Swal.fire({
+        title: "Warning!",
+        text: "File size is too big! Please select an image smaller than 2MB.",
+        icon: "info",
+      });
       return;
     }
 
@@ -33,16 +38,24 @@ const ImageUploadModal: React.FC<ImageUploadModalProps> = ({
 
     try {
       const imageUrl = await imageUpload(file);
-      console.log(imageUrl, "udsfhsjdkf");
+
       if (imageUrl) {
         onUpload(imageUrl);
         onClose();
       } else {
-        alert("Upload failed! Please try again.");
+        Swal.fire({
+          title: "Error!",
+          text: "Upload failed! Please try again.",
+          icon: "error",
+        });
       }
     } catch (error) {
       console.error("Upload error:", error);
-      alert("Something went wrong during upload.");
+      Swal.fire({
+        title: "Error!",
+        text: "Something went wrong",
+        icon: "error",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -72,7 +85,7 @@ const ImageUploadModal: React.FC<ImageUploadModalProps> = ({
             </div>
             <div>
               <h3 className="text-lg font-medium inter text-text-primary">
-                Choose a file or drag & drop it here
+                Choose a file to upload a image
               </h3>
               <p className="text-sm text-secondary inter mt-1">
                 PDF, JPG, JPEG, PNG. MAX (2MB)
