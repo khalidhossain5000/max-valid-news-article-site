@@ -6,12 +6,14 @@ import DashboardHome from "../Pages/DashboardPages/DashboardHome/DashboardHome";
 import NewsManagement from "../Pages/DashboardPages/NewsManageMent/NewsManagement";
 import CreateContent from "../Pages/DashboardPages/CreateContentPage/CreateContent";
 import NotFound from "../Pages/NotFoundPage/NotFound";
+import NewsDetailsPage from "../Pages/NewsDetailsPage/NewsDetailsPage";
+import { getNewsDetails } from "../service/newsHandler";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
-      children: [
+    children: [
       {
         index: true,
         element: <Navigate to="/news-articles" replace />,
@@ -19,6 +21,11 @@ export const router = createBrowserRouter([
       {
         path: "news-articles",
         element: <NewsArticlePage />,
+      },
+      {
+        path: "news-article/:id",
+        element: <NewsDetailsPage />,
+        loader: ({ params }) => getNewsDetails(params.id as string),
       },
     ],
   },
@@ -42,7 +49,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-  path: "*",
-  element: <NotFound />,
-}
+    path: "*",
+    element: <NotFound />,
+  },
 ]);

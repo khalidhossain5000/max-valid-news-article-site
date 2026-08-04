@@ -2,6 +2,7 @@ import { twMerge } from "tailwind-merge";
 import type { INews } from "../../../types/types";
 import { formatDate } from "../../../service/formatDate";
 import Title from "../../Shared/Title/Title";
+import { Link } from "react-router";
 
 interface NewsCardProps {
   news: INews;
@@ -20,6 +21,7 @@ const NewsCard = ({
   const { day, time } = formatDate(news.createdAt);
 
   return (
+    <Link to={`/news-article/${news.id}`}>
     <article
       className={twMerge(
         "overflow-hidden rounded-2xl border border-slate-200 bg-card shadow-sm transition hover:shadow-md",
@@ -60,6 +62,7 @@ const NewsCard = ({
         </div>
       </div>
     </article>
+    </Link>
   );
 };
 

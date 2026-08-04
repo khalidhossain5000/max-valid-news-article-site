@@ -71,7 +71,7 @@ const AllNewsTable = () => {
                           <p className="text-xs text-gray-400">{time}</p>
                         </td>
                         <td className="px-4 py-3">
-                          <Link to={`/news/${n.id}`}>
+                          <Link to={`/news-article/${n.id}`}>
                             <IoOpenOutline size={18} />
                           </Link>
                         </td>
@@ -103,7 +103,7 @@ const AllNewsTable = () => {
         ) : (
           news.map((n) => (
             <NewsCard
-            className="my-6"
+              className="my-6"
               key={n.id}
               news={n}
               showActions

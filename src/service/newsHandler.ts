@@ -13,7 +13,6 @@ export const createNewsArticle = async (payload: ICreatNewsPayload) => {
 
   const result = await res.json();
 
-  console.log("result", result);
 
   return result;
 };
@@ -35,3 +34,16 @@ export const getAllNews = async (query: INewsQuery) => {
 
   return res.json();
 };
+
+
+//get artilce details
+
+export const getNewsDetails=async(id:string)=>{
+    const res = await fetch(`${backendUrl}/api/news/${id}`);
+
+
+   const result=res.json()
+
+
+   return result
+}
